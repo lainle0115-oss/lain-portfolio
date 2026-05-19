@@ -283,6 +283,53 @@ body {
   color: var(--accent);
 }
 
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.stat-card { text-align: center; padding: 36px 20px; }
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 52px);
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.stat-unit { font-size: 16px; }
+
+.stat-label {
+  font-size: 13px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.stat-sub {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.channel-wall {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.channel-pill {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 8px 18px;
+  border: 0.5px solid rgba(196,168,130,0.25);
+  color: var(--accent);
+  border-radius: 2px;
+}
+
 </style>
 </head>
 <body>
@@ -410,6 +457,40 @@ body {
         <span class="meta-type">Detail</span>
       </div>
     </div>
+  </div>
+
+<hr class="section-divider">
+
+<section class="section" id="channels">
+  <div class="section-header">
+    <div class="section-eyebrow">Channel Distribution</div>
+    <h2 class="section-title">Results</h2>
+  </div>
+
+  <div class="stats-row">
+    <div class="card stat-card">
+      <div class="stat-number">28000<span class="stat-unit">瓶</span></div>
+      <div class="stat-label">朴朴 · 首月销量</div>
+      <div class="stat-sub">39万元销售额</div>
+    </div>
+    <div class="card stat-card">
+      <div class="stat-number">100<span class="stat-unit">%</span></div>
+      <div class="stat-label">叮咚 · 稳定履约</div>
+      <div class="stat-sub">8,159瓶 · 18万元</div>
+    </div>
+    <div class="card stat-card">
+      <div class="stat-number">3<span class="stat-unit"> SKU</span></div>
+      <div class="stat-label">奥乐齐 · 审厂通过</div>
+      <div class="stat-sub">秋冬采购清单</div>
+    </div>
+  </div>
+
+  <div class="channel-wall">
+    <span class="channel-pill">ALDI 奥乐齐</span>
+    <span class="channel-pill">小象超市</span>
+    <span class="channel-pill">叮咚买菜</span>
+    <span class="channel-pill">盒马鲜生</span>
+    <span class="channel-pill">朴朴</span>
   </div>
 </section>
 
