@@ -1,0 +1,11 @@
+.DS_Store
+.superpowers/
+~*
+*.xlsx
+*.pages
+*.key
+*.pdf
+agent/
+docs/
+superpowers-main/
+.localized
