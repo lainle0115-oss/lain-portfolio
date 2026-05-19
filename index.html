@@ -239,7 +239,49 @@ body {
   </div>
 </section>
 <script>
-// JS goes here
+// Fix image paths for Chinese filenames
+document.querySelectorAll('img[data-filename]').forEach(function(img) {
+  img.src = encodeURIComponent(img.dataset.filename);
+});
+
+// Hero parallax
+(function() {
+  var hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  var bg = hero.querySelector('.hero-bg');
+  var product = hero.querySelector('.hero-product');
+  var floats = hero.querySelectorAll('.hero-float');
+
+  function onScroll() {
+    var scrollY = window.pageYOffset;
+    var heroHeight = hero.offsetHeight;
+    if (scrollY > heroHeight) return;
+
+    var progress = scrollY / heroHeight;
+    if (bg) bg.style.transform = 'translateY(' + (progress * 40) + 'px)';
+    if (product) product.style.transform = 'translateY(' + (progress * 80) + 'px)';
+    floats.forEach(function(el, i) {
+      var speed = 100 + i * 30;
+      el.style.transform = 'translateY(' + (progress * speed) + 'px) rotate(' + (el.classList.contains('hero-float-1') ? 15 : -10) + 'deg)';
+    });
+  }
+
+  function onMouseMove(e) {
+    var x = (e.clientX / window.innerWidth - 0.5) * 2;
+    var y = (e.clientY / window.innerHeight - 0.5) * 2;
+    if (product) product.style.transform = 'translate(' + (x * -15) + 'px, ' + (y * -15) + 'px)';
+    floats.forEach(function(el, i) {
+      var factor = 20 + i * 10;
+      el.style.transform = 'translate(' + (x * factor) + 'px, ' + (y * factor) + 'px) rotate(' + (el.classList.contains('hero-float-1') ? 15 : -10) + 'deg)';
+    });
+    if (bg) bg.style.transform = 'translate(' + (x * -5) + 'px, ' + (y * -5) + 'px)';
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  hero.addEventListener('mousemove', onMouseMove, { passive: true });
+  onScroll();
+})();
 </script>
 </body>
 </html>
