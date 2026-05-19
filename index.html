@@ -126,6 +126,90 @@ body {
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--ink); }
+
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px var(--side-padding) 80px;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 35% 25%, var(--glow-amber) 0%, transparent 55%),
+    radial-gradient(ellipse at 70% 60%, rgba(139,69,19,0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #0d0a06 0%, #1a100a 40%, #0f0a05 100%);
+  z-index: 0;
+}
+
+.hero-product {
+  position: absolute;
+  right: 8%;
+  top: 18%;
+  width: 280px;
+  height: 380px;
+  background: linear-gradient(135deg, rgba(196,168,130,0.12), rgba(196,168,130,0.02));
+  border: 0.5px solid rgba(196,168,130,0.15);
+  border-radius: 140px 140px 4px 4px;
+  z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-product::after {
+  content: '';
+  font-size: 64px;
+  opacity: 0.3;
+}
+
+.hero-float {
+  position: absolute;
+  background: rgba(196,168,130,0.06);
+  border: 0.5px solid rgba(196,168,130,0.1);
+  border-radius: 4px;
+  z-index: 2;
+}
+.hero-float-1 { right: 38%; top: 62%; width: 60px; height: 85px; transform: rotate(15deg); }
+.hero-float-2 { left: 12%; top: 68%; width: 45px; height: 65px; transform: rotate(-10deg); }
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 600px;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 8vw, 96px);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  margin-bottom: 100px;
+  text-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.hero-sub {
+  font-size: 16px;
+  color: rgba(240,230,211,0.75);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.hero-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+
 </style>
 </head>
 <body>
@@ -138,6 +222,22 @@ body {
     <a href="#about">About</a>
   </div>
 </nav>
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-product" data-parallax="medium"></div>
+  <div class="hero-float hero-float-1" data-parallax="fast"></div>
+  <div class="hero-float hero-float-2" data-parallax="fast"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Channel Sales &amp; NPD</div>
+    <h1 class="hero-name">Lain</h1>
+    <p class="hero-sub">产品开发 &amp; AI驱动营销<br>奥兰 · 小红帽</p>
+    <div class="hero-tags">
+      <span class="tag">柠檬沙瓦</span>
+      <span class="tag">NPD全流程</span>
+      <span class="tag">AI视觉</span>
+    </div>
+  </div>
+</section>
 <script>
 // JS goes here
 </script>
