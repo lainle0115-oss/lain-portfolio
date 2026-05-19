@@ -461,6 +461,16 @@ body {
   font-size: 11px;
   color: var(--muted);
 }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
 </head>
 <body>
@@ -734,6 +744,23 @@ document.querySelectorAll('img[data-filename]').forEach(function(img) {
   window.addEventListener('scroll', onScroll, { passive: true });
   hero.addEventListener('mousemove', onMouseMove, { passive: true });
   onScroll();
+})();
+
+// Scroll reveal
+(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.section-header, .stat-card, .ai-card, .product-item, .about-bio, .channel-wall').forEach(function(el) {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
 })();
 </script>
 </body>
