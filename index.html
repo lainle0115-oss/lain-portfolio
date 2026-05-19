@@ -92,10 +92,52 @@ body {
   transition: border-color 0.3s;
 }
 .card:hover { border-color: rgba(196,168,130,0.25); }
+
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 16px var(--side-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10,7,4,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--line);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+
+.nav-links { display: flex; gap: 28px; }
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); }
 </style>
 </head>
 <body>
-<!-- HTML goes here -->
+<nav class="nav">
+  <a href="#" class="nav-logo">Lain</a>
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#channels">Channels</a>
+    <a href="#ai">AI</a>
+    <a href="#about">About</a>
+  </div>
+</nav>
 <script>
 // JS goes here
 </script>
