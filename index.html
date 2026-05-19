@@ -214,8 +214,8 @@ body {
 /* ===== Product Section ===== */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
 .product-item {
@@ -228,7 +228,7 @@ body {
   cursor: pointer;
 }
 .product-item:hover { transform: translateY(-4px); }
-.product-item.product-main { grid-column: span 2; grid-row: span 2; }
+.product-item.product-main { grid-column: span 2; }
 
 .product-img {
   position: relative;
@@ -472,7 +472,7 @@ body {
   .hero-float { display: none; }
 
   .product-grid { grid-template-columns: 1fr 1fr; }
-  .product-item.product-main { grid-column: 1 / -1; grid-row: auto; }
+  .product-item.product-main { grid-column: 1 / -1; }
 
   .stats-row { grid-template-columns: 1fr; }
   .ai-grid { grid-template-columns: 1fr; }
@@ -682,10 +682,13 @@ body {
         <span class="ai-old">3d</span>
       </div>
       <p class="ai-desc">Nano Banana 2 (Gemini 3 Flash Image) 替代传统外包，独立完成电商主图与详情页设计，10+ 风格快速迭代。</p>
-      <div class="ai-video-slot">
-        <div class="ai-video-placeholder">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          <span>Veo 动态商品内容 · CTR +20%</span>
+      <div class="ai-video-slot" style="padding:0; background:transparent; border:none; margin-top:16px;">
+        <div style="position:relative; padding-top:56.25%; border-radius:4px; overflow:hidden;">
+          <iframe src="https://www.youtube.com/embed/oh3n0Y4M2qE" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div style="font-size:11px; color:var(--muted); margin-top:8px; display:flex; align-items:center; gap:8px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Veo 动态商品内容 · CTR +20%
         </div>
       </div>
     </div>
@@ -719,8 +722,8 @@ body {
       <p>渠道销售与产品开发专业人士，专注于酒水饮料赛道。擅长用 AI 工具重塑传统销售流程——从视觉生产到数据分析，持续推动效率边界。</p>
       <div class="about-contact">
         <a href="https://github.com/lainle0115-oss" target="_blank">GitHub</a>
-        <a href="mailto:your@email.com">Email</a>
-        <a href="#" class="btn-resume">Download Resume PDF</a>
+        <a href="mailto:Lainle0115@gmail.com">Email</a>
+        <a href="%E5%BC%A0%E4%B9%90%E7%AE%80%E5%8E%86_%E5%89%AF%E6%9C%AC.pdf" class="btn-resume" download>Download Resume PDF</a>
       </div>
     </div>
   </div>
