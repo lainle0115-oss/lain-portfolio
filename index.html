@@ -214,8 +214,8 @@ body {
 /* ===== Product Section ===== */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
 }
 
 .product-item {
@@ -228,15 +228,15 @@ body {
   cursor: pointer;
 }
 .product-item:hover { transform: translateY(-4px); }
-.product-item.product-main { grid-column: span 2; }
+.product-item.product-main { }
 
 .product-img {
   position: relative;
-  aspect-ratio: 4/5;
+  aspect-ratio: 1/1;
   background: rgba(196,168,130,0.04);
   overflow: hidden;
 }
-.product-main .product-img { aspect-ratio: 4/3; }
+.product-main .product-img { aspect-ratio: 16/10; }
 
 .product-placeholder::after { content: '...'; }
 
@@ -471,7 +471,7 @@ body {
   .hero-product { right: 5%; width: 180px; height: 260px; border-radius: 100px 100px 4px 4px; }
   .hero-float { display: none; }
 
-  .product-grid { grid-template-columns: 1fr 1fr; }
+  .product-grid { grid-template-columns: repeat(3, 1fr); }
   .product-item.product-main { grid-column: 1 / -1; }
 
   .stats-row { grid-template-columns: 1fr; }
@@ -482,8 +482,8 @@ body {
 @media (max-width: 480px) {
   .hero-name { font-size: 48px; }
   .hero-product { display: none; }
-  .product-grid { grid-template-columns: 1fr; }
-  .product-item.product-main { grid-column: auto; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .product-item.product-main { grid-column: 1 / -1; }
   .about-contact { flex-direction: column; align-items: flex-start; }
 }
 </style>
@@ -684,10 +684,9 @@ body {
       <p class="ai-desc">Nano Banana 2 (Gemini 3 Flash Image) 替代传统外包，独立完成电商主图与详情页设计，10+ 风格快速迭代。</p>
       <div class="ai-video-slot" style="padding:0; background:transparent; border:none; margin-top:16px;">
         <div style="position:relative; padding-top:56.25%; border-radius:4px; overflow:hidden;">
-          <iframe src="https://www.youtube.com/embed/oh3n0Y4M2qE" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/oh3n0Y4M2qE?origin=http://localhost" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
-        <div style="font-size:11px; color:var(--muted); margin-top:8px; display:flex; align-items:center; gap:8px;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <div style="font-size:11px; color:var(--muted); margin-top:8px;">
           Veo 动态商品内容 · CTR +20%
         </div>
       </div>
@@ -737,7 +736,7 @@ body {
 <script>
 // Fix image paths for Chinese filenames
 document.querySelectorAll('img[data-filename]').forEach(function(img) {
-  img.src = encodeURIComponent(img.dataset.filename);
+  img.src = encodeURI(img.dataset.filename);
 });
 
 // Hero parallax
