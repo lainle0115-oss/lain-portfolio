@@ -397,6 +397,70 @@ body {
 }
 
 .ai-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-name {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 36px);
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.about-role {
+  font-size: 13px;
+  color: var(--accent);
+}
+
+.about-bio p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.about-contact {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-contact a {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.about-contact a:hover { color: var(--ink); }
+
+.btn-resume {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 0.5px solid rgba(196,168,130,0.35);
+  color: var(--accent) !important;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+.btn-resume:hover { background: rgba(196,168,130,0.08); }
+
+.footer {
+  padding: 32px var(--side-padding);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 0.5px solid var(--line);
+  font-size: 11px;
+  color: var(--muted);
+}
 </style>
 </head>
 <body>
@@ -600,6 +664,32 @@ body {
     </div>
   </div>
 </section>
+
+
+<hr class="section-divider">
+
+<section class="section" id="about">
+  <div class="about-grid">
+    <div>
+      <div class="section-eyebrow">About</div>
+      <div class="about-name">Lain</div>
+      <p class="about-role">Channel Sales &amp; NPD · 奥兰小红帽</p>
+    </div>
+    <div class="about-bio">
+      <p>渠道销售与产品开发专业人士，专注于酒水饮料赛道。擅长用 AI 工具重塑传统销售流程——从视觉生产到数据分析，持续推动效率边界。</p>
+      <div class="about-contact">
+        <a href="https://github.com/lainle0115-oss" target="_blank">GitHub</a>
+        <a href="mailto:your@email.com">Email</a>
+        <a href="#" class="btn-resume">Download Resume PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>&copy; 2025 Lain</span>
+  <span>Built with Claude Code</span>
+</footer>
 
 <script>
 // Fix image paths for Chinese filenames
