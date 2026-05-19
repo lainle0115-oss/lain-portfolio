@@ -214,7 +214,7 @@ body {
 /* ===== Product Section ===== */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 10px;
 }
 
@@ -228,7 +228,8 @@ body {
   cursor: pointer;
 }
 .product-item:hover { transform: translateY(-4px); }
-.product-item.product-main { grid-column: span 2; }
+.product-item.product-main { grid-column: span 3; }
+.product-item.span-2 { grid-column: span 2; }
 
 .product-img {
   position: relative;
@@ -488,7 +489,8 @@ body {
   .hero-float { display: none; }
 
   .product-grid { grid-template-columns: repeat(3, 1fr); }
-  .product-item.product-main { grid-column: span 2; }
+  .product-item.product-main { grid-column: span 3; }
+.product-item.span-2 { grid-column: span 2; }
 
   .stats-row { grid-template-columns: 1fr; }
   .ai-grid { grid-template-columns: 1fr; }
@@ -499,7 +501,8 @@ body {
   .hero-name { font-size: 48px; }
   .hero-product { display: none; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
-  .product-item.product-main { grid-column: span 2; }
+  .product-item.product-main { grid-column: span 3; }
+.product-item.span-2 { grid-column: span 2; }
   .about-contact { flex-direction: column; align-items: flex-start; }
 }
 </style>
@@ -570,7 +573,7 @@ body {
       </div>
     </div>
 
-    <div class="product-item">
+    <div class="product-item product-main">
       <div class="product-img">
         <img data-filename="DSC_3754.jpg" alt="柠檬沙瓦电商主图" style="display:none" onload="this.style.display='';this.parentElement.querySelector('.product-placeholder').style.display='none'">
         <div class="product-placeholder"></div>
@@ -585,7 +588,7 @@ body {
       </div>
     </div>
 
-    <div class="product-item">
+    <div class="product-item product-main">
       <div class="product-img">
         <img data-filename="柠檬沙瓦气泡酒_详情切片_01.jpg" alt="详情切片01" style="display:none" onload="this.style.display='';this.parentElement.querySelector('.product-placeholder').style.display='none'">
         <div class="product-placeholder"></div>
@@ -600,7 +603,7 @@ body {
       </div>
     </div>
 
-    <div class="product-item">
+    <div class="product-item span-2">
       <div class="product-img">
         <img data-filename="柠檬沙瓦气泡酒_详情切片_02_副本.jpg" alt="详情切片02" style="display:none" onload="this.style.display='';this.parentElement.querySelector('.product-placeholder').style.display='none'">
         <div class="product-placeholder"></div>
@@ -615,7 +618,7 @@ body {
       </div>
     </div>
 
-    <div class="product-item">
+    <div class="product-item span-2">
       <div class="product-img">
         <img data-filename="柠檬沙瓦气泡酒_详情切片_03.jpg" alt="详情切片03" style="display:none" onload="this.style.display='';this.parentElement.querySelector('.product-placeholder').style.display='none'">
         <div class="product-placeholder"></div>
@@ -630,7 +633,7 @@ body {
       </div>
     </div>
 
-    <div class="product-item">
+    <div class="product-item span-2">
       <div class="product-img">
         <img data-filename="POPPOP柠檬气泡水长页产品详情图_副本.png" alt="柠檬气泡水产品详情页" style="display:none" onload="this.style.display='';this.parentElement.querySelector('.product-placeholder').style.display='none'">
         <div class="product-placeholder"></div>
