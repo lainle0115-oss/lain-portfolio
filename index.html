@@ -330,6 +330,73 @@ body {
   border-radius: 2px;
 }
 
+
+.ai-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ai-card { padding: 32px; }
+
+.ai-card-label {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.ai-compare {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.ai-big {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 56px);
+  color: var(--ink);
+  line-height: 1;
+}
+
+.ai-vs {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.ai-old {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.ai-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.ai-video-slot {
+  margin-top: 12px;
+  padding: 14px 18px;
+  background: rgba(196,168,130,0.05);
+  border: 0.5px solid var(--line);
+  border-radius: 4px;
+}
+
+.ai-video-placeholder {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.ai-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
 </style>
 </head>
 <body>
@@ -491,6 +558,46 @@ body {
     <span class="channel-pill">叮咚买菜</span>
     <span class="channel-pill">盒马鲜生</span>
     <span class="channel-pill">朴朴</span>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section class="section" id="ai">
+  <div class="section-header">
+    <div class="section-eyebrow">AI-Powered Efficiency</div>
+    <h2 class="section-title">Tech Stack</h2>
+  </div>
+
+  <div class="ai-grid">
+    <div class="card ai-card">
+      <div class="ai-card-label">视觉生产提效</div>
+      <div class="ai-compare">
+        <span class="ai-big">2h</span>
+        <span class="ai-vs">vs 传统外包</span>
+        <span class="ai-old">3d</span>
+      </div>
+      <p class="ai-desc">Nano Banana 2 (Gemini 3 Flash Image) 替代传统外包，独立完成电商主图与详情页设计，10+ 风格快速迭代。</p>
+      <div class="ai-video-slot">
+        <div class="ai-video-placeholder">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span>Veo 动态商品内容 · CTR +20%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card ai-card">
+      <div class="ai-card-label">数据 &amp; 自动化</div>
+      <div class="ai-compare">
+        <span class="ai-big">80%</span>
+        <span class="ai-vs">对账时间降低</span>
+      </div>
+      <p class="ai-desc">Claude Code + Python 自建销售数据分析轻应用，自动抓取 POS 数据并趋势预警。</p>
+      <div class="ai-tags">
+        <span class="tag">12套 SOP 话术</span>
+        <span class="tag">LLM 私域经营</span>
+      </div>
+    </div>
   </div>
 </section>
 
